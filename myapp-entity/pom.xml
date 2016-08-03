@@ -5,11 +5,11 @@
   <parent>
     <groupId>com.alioverview</groupId>
     <artifactId>myapp-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.alioverview</groupId>
   <artifactId>myapp-entity</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0.1-SNAPSHOT</version>
   <name>myapp-entity</name>
   <url>http://maven.apache.org</url>
   <properties>

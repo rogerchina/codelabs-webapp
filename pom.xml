@@ -4,7 +4,7 @@
 
   <groupId>com.alioverview</groupId>
   <artifactId>myapp-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>myapp-parent</name>
