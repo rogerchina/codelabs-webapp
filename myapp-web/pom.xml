@@ -6,11 +6,10 @@
 	<parent>
 		<groupId>com.alioverview</groupId>
 		<artifactId>myapp-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0.1-SNAPSHOT</version>
 	</parent>
   
 	<artifactId>myapp-web</artifactId>
-	<version>1.0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>myapp-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -29,7 +28,6 @@
 		<dependency>  
 		    <groupId>junit</groupId>  
 		    <artifactId>junit</artifactId>  
-		    <version>4.4</version>  
 		    <scope>test</scope>  
 		</dependency>  
 		<dependency>  
@@ -41,12 +39,6 @@
 		    <groupId>org.apache.struts</groupId>  
 		    <artifactId>struts2-spring-plugin</artifactId>  
 		    <version>2.3.16.1</version>  
-		</dependency>
-		<dependency>
-		   <groupId>junit</groupId>
-		   <artifactId>junit</artifactId>
-		   <version>3.8.1</version>
-		   <scope>test</scope>
 		</dependency>
 	</dependencies>
 
