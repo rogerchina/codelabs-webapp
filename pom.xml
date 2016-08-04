@@ -21,6 +21,7 @@
 		<module>myapp-dao</module>
 		<module>myapp-service</module>
 		<module>myapp-web</module>
+		<module>myapp-specs</module>
 	</modules>
 
 	<dependencyManagement>
