@@ -18,28 +18,21 @@
 	</properties>
 
 	<dependencies>
-		<!-- 引用实体模块 -->
 		<dependency>
 			<groupId>com.alioverview</groupId>
 			<artifactId>myapp-entity</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
-		<!-- junit4 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- c3p0数据源 -->
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
-
-		<!-- 依赖log4j slf4j -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -50,13 +43,11 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>javassist</groupId>
 			<artifactId>javassist</artifactId>
@@ -64,7 +55,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
 		<!-- Hiberante -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -76,7 +66,6 @@
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.3.1.GA</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
