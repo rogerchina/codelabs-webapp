@@ -14,8 +14,13 @@ public class HelloWorldServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		super.doPost(request, response);
-		response.getWriter().print("hello world!");
+		response.getWriter().print("hello world myapp!");
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doPost(request, response);
 	}
 
 }

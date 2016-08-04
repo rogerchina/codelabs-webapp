@@ -3,13 +3,14 @@
 		 xmlns="http://java.sun.com/xml/ns/javaee" 
 		 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
 		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">  
-    <display-name>meeting</display-name>  
+    <display-name>myapp</display-name>  
     <welcome-file-list>  
         <welcome-file>index.html</welcome-file>  
         <welcome-file>index.htm</welcome-file>  
         <welcome-file>index.jsp</welcome-file>  
     </welcome-file-list>  
     
+    <!-- 1. use original servlet usage -->
     <servlet>
     	<servlet-name>HelloWorld</servlet-name>
     	<servlet-class>com.alioverview.webui.HelloWorldServlet</servlet-class>
@@ -19,6 +20,8 @@
     	<url-pattern>/helloworld</url-pattern>
     </servlet-mapping>
     
+    <!-- 2. use SSH framework  -->
+    <!-- 
     <filter>  
         <filter-name>struts2</filter-name>  
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>  
@@ -28,8 +31,8 @@
         <filter-name>struts2</filter-name>  
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
-  
-    
+   -->
+    <!-- 
     <listener>  
         <listener-class>    
             org.springframework.web.context.ContextLoaderListener    
@@ -40,6 +43,6 @@
         <param-name>contextConfigLocation</param-name>  
         <param-value>classpath*:applicationContext.xml</param-value>  
     </context-param>  
-  
+   -->
     
 </web-app>
