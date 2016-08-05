@@ -32,17 +32,36 @@
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
    -->
+   
+	<!-- Spring分为多个文件进行分别的配置，其中在servlet-name中如果没有指定init-param属性，-->
+	<!-- 那么系统自动寻找的spring配置文件为[servlet-name]-servlet.xml。当需要载入多个spring相关的配置文件时，-->
+	<!-- 首先加载ContextLoaderListener类，再指定context-param中指定多个spring配置文件，使用逗号分别隔开各个文件。 -->
+	<!-- 为了使用方便可以将配置文件进行MVC式的分解，配置控制器controller的Bean的配置文件放置在一个xml文件中，-->
+	<!-- 配置service的Bean放在service.xml文件中。-->
+	<!-- <servlet-mapping>指定的该servlet接管的url的行为，此处为了简便起见使用*.*,则表示在URL只要是在本机使用的任何request都是由该dispatchServlet来处理。 -->
     <!-- 
     <listener>  
         <listener-class>    
             org.springframework.web.context.ContextLoaderListener    
         </listener-class>   
     </listener>  
-  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath*:applicationContext.xml</param-value>  
+        <param-value>classpath*:applicationContext.xml  (/WEB-INF/applicationContext.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm)</param-value>  
     </context-param>  
+    
+	<servlet>
+		<servlet-name>dispatch</servlet>  
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+		<init-param>  
+			<param-name>contextConfigLocation</param-name>  
+			<param-value>/WEB-INF/applicationContext.xml</param-value>  
+		</init-param>  
+	</servlet>
+	<servlet-mapping>  
+		<servlet-name>dispatch</servlet-name>  
+		<servlet-pattern>*.*</servlet-pattern>  
+	</servlet-mapping>  
    -->
     
 </web-app>
