@@ -21,6 +21,9 @@
     </servlet-mapping>
     
     <!-- 2. use SSH framework  -->
+    <!-- Struts 1 and Struts 2 and Springmvc are can controll the request and response. -->
+    
+    <!-- if use struts, the configuration as below. -->
     <!-- 
     <filter>  
         <filter-name>struts2</filter-name>  
@@ -33,6 +36,9 @@
     </filter-mapping>  
    -->
    
+   
+    <!--if use springmv, the configuration as below  -->
+    
 	<!-- Spring分为多个文件进行分别的配置，其中在servlet-name中如果没有指定init-param属性，-->
 	<!-- 那么系统自动寻找的spring配置文件为[servlet-name]-servlet.xml。当需要载入多个spring相关的配置文件时，-->
 	<!-- 首先加载ContextLoaderListener类，再指定context-param中指定多个spring配置文件，使用逗号分别隔开各个文件。 -->
