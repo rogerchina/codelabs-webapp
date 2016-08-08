@@ -13,6 +13,10 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd  
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	
+	<!--
+	-Spring integrate with Mybatis. 
+ 	-->
+	
 	<!-- 自动扫描web包 ,将带有注解的类 纳入spring容器管理 -->  	
 	<context:component-scan base-package="com.alioverview.webui"></context:component-scan>	
 	
@@ -27,7 +31,6 @@
 	
 	 <!-- dataSource 配置 -->  
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">  
-        <!-- 基本属性 url、user、password -->  
         <property name="url" value="${jdbc.url}" />  
         <property name="username" value="${jdbc.username}" />  
         <property name="password" value="${jdbc.password}" />  
@@ -61,9 +64,9 @@
   	
   	<!-- Spring和mybatis集成的配置 Start -->
     <!-- mybatis文件配置，扫描所有mapper文件 -->  
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis-config.xml" p:mapperLocations="classpath:com/eduoinfo/finances/bank/web/dao/*.xml" />  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis-config.xml" p:mapperLocations="classpath:com/myapp/dao/*.xml" />  
     <!-- spring与mybatis整合配置，扫描所有dao -->  
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.eduoinfo.finances.bank.web.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />  
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="org.myapp.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />  
   	<!-- Spring和mybatis集成的配置 END -->
   
   
