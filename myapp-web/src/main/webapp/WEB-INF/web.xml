@@ -46,6 +46,7 @@
 	<!-- 配置service的Bean放在service.xml文件中。-->
 	<!-- <servlet-mapping>指定的该servlet接管的url的行为，此处为了简便起见使用*.*,则表示在URL只要是在本机使用的任何request都是由该dispatchServlet来处理。 -->
 	<!-- para-value: classpath*:applicationContext.xml -->
+	<!-- <param-value>/WEB-INF/config/applicationContext-hibernate.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm</param-value> -->
     <!-- -->
     <listener>  
         <listener-class>    
@@ -54,7 +55,7 @@
     </listener>  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>/WEB-INF/applicationContext.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm</param-value>  
+        <param-value>/WEB-INF/config/applicationContext-hibernate.xml</param-value>  
     </context-param>  
 
 	<servlet>
@@ -62,13 +63,12 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/applicationContext.xml</param-value>  
+			<param-value>/WEB-INF/config/applicationContext-hibernate.xml</param-value>  
 		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatch</servlet-name>  
 		<url-pattern>*.*</url-pattern>  
 	</servlet-mapping>  
-   
     
 </web-app>

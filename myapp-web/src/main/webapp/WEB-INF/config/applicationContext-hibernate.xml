@@ -7,17 +7,25 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
     xmlns:context="http://www.springframework.org/schema/context"  
     xmlns:tx="http://www.springframework.org/schema/tx"  
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd  
-    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd  
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"  
     default-autowire="byName" default-lazy-init="false">  
     <!-- 不加default-autowire="byName" 会得不到hibernateTemplate -->  
       
     <!-- 配置spring扫描注解的范围 -->  
-    <context:component-scan base-package="com.zyx.**"  />  
+    <context:component-scan base-package="com.myapp.**"  />  
   
     <!-- 定义占位符所在的文件 -->  
-    <context:property-placeholder location="classpath:jdbc.properties"/>  
+    <!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->  
+    <!-- <context:property-placeholder location="xxx.properties" ignore-unresolvable="true" /> -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:jdbc.properties" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
       
     <!-- 配置数据源，使用了占位符 -->  
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  
@@ -29,13 +37,12 @@
   
   
     <!-- 配置sessionFactory，使用了占位符 -->  
-    <bean id="sessionFactory"  
-        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">  
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">  
         <property name="dataSource">  
             <ref bean="dataSource" />           
         </property>  
         <!-- 全包扫描必须设置成实体类的上两层以上包！！！ -->  
-        <property name="packagesToScan" value="com.zyx.model.*" />  
+        <property name="packagesToScan" value="com.myapp.entity.*" />  
           
         <property name="hibernateProperties">  
             <props>  
@@ -50,8 +57,7 @@
     </bean>  
       
     <!-- 配置事务管理器 -->  
-    <bean id="transactionManager"  
-        class="org.springframework.orm.hibernate3.HibernateTransactionManager"  lazy-init="false" destroy-method="close">  
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager"  lazy-init="false">  
         <property name="sessionFactory" ref="sessionFactory" />  
         <property name="globalRollbackOnParticipationFailure" value="false" />          
     </bean>  
