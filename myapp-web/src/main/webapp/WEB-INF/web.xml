@@ -5,12 +5,11 @@
 		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">  
     <display-name>myapp</display-name>  
     <welcome-file-list>  
-        <welcome-file>index.html</welcome-file>  
-        <welcome-file>index.htm</welcome-file>  
         <welcome-file>index.jsp</welcome-file>  
     </welcome-file-list>  
     
     <!-- 1. use original servlet usage -->
+    <!-- 
     <servlet>
     	<servlet-name>HelloWorld</servlet-name>
     	<servlet-class>com.alioverview.webui.HelloWorldServlet</servlet-class>
@@ -19,11 +18,12 @@
     	<servlet-name>HelloWorld</servlet-name>
     	<url-pattern>/helloworld</url-pattern>
     </servlet-mapping>
+     -->
     
     <!-- 2. use SSH framework  -->
     <!-- Struts 1 and Struts 2 and Springmvc are can controll the request and response. -->
     
-    <!-- if use struts, the configuration as below. -->
+    <!-- 2.1 if use struts, the configuration as below. -->
     <!-- 
     <filter>  
         <filter-name>struts2</filter-name>  
@@ -37,7 +37,7 @@
    -->
    
    
-    <!--if use springmv, the configuration as below  -->
+    <!-- 2.2 if use springmv, the configuration as below  -->
     
 	<!-- Spring分为多个文件进行分别的配置，其中在servlet-name中如果没有指定init-param属性，-->
 	<!-- 那么系统自动寻找的spring配置文件为[servlet-name]-servlet.xml。当需要载入多个spring相关的配置文件时，-->
@@ -45,7 +45,8 @@
 	<!-- 为了使用方便可以将配置文件进行MVC式的分解，配置控制器controller的Bean的配置文件放置在一个xml文件中，-->
 	<!-- 配置service的Bean放在service.xml文件中。-->
 	<!-- <servlet-mapping>指定的该servlet接管的url的行为，此处为了简便起见使用*.*,则表示在URL只要是在本机使用的任何request都是由该dispatchServlet来处理。 -->
-    <!-- 
+	<!-- para-value: classpath*:applicationContext.xml -->
+    <!-- -->
     <listener>  
         <listener-class>    
             org.springframework.web.context.ContextLoaderListener    
@@ -53,21 +54,21 @@
     </listener>  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath*:applicationContext.xml  (/WEB-INF/applicationContext.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm)</param-value>  
+        <param-value>/WEB-INF/applicationContext.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm</param-value>  
     </context-param>  
-    
+
 	<servlet>
-		<servlet-name>dispatch</servlet>  
+		<servlet-name>dispatch</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
-		<init-param>  
-			<param-name>contextConfigLocation</param-name>  
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/applicationContext.xml</param-value>  
-		</init-param>  
+		</init-param>
 	</servlet>
-	<servlet-mapping>  
+	<servlet-mapping>
 		<servlet-name>dispatch</servlet-name>  
-		<servlet-pattern>*.*</servlet-pattern>  
+		<url-pattern>*.*</url-pattern>  
 	</servlet-mapping>  
-   -->
+   
     
 </web-app>
