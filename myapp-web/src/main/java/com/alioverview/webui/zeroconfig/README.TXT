@@ -1,0 +1,2 @@
+servlet3.0之前的版本是需要配置文件的，如web.xml,同时SSH的集成也都是需要很多的配置文件。
+servlet3.0以后就可以通过annotation代替配置，该包下主要试验通过annotation实现零配置SSH集成。
