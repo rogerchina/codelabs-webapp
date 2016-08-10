@@ -22,8 +22,9 @@
     
     <!-- 2. use SSH framework  -->
     <!-- Struts 1 and Struts 2 and Springmvc are can controll the request and response. -->
-    
-    <!-- 2.1 if use struts, the configuration as below. -->
+    <!-- ///////////////////////////////////////////////////////////-->
+    <!-- ///2.1 if use struts, the configuration as below. START ///-->
+    <!-- ///////////////////////////////////////////////////////////-->
     <!-- 
     <filter>  
         <filter-name>struts2</filter-name>  
@@ -34,11 +35,16 @@
         <filter-name>struts2</filter-name>  
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
-   -->
+    -->
+    <!-- ///////////////////////////////////////////////////////////-->
+    <!-- ///2.1 if use struts, the configuration as below. END   ///-->
+    <!-- ///////////////////////////////////////////////////////////-->
    
-   
-    <!-- 2.2 if use springmv, the configuration as below  -->
     
+    
+    <!-- /////////////////////////////////////////////////////////////-->
+    <!-- ///2.2 if use springmv, the configuration as below. START ///-->
+    <!-- /////////////////////////////////////////////////////////////-->
 	<!-- Spring分为多个文件进行分别的配置，其中在servlet-name中如果没有指定init-param属性，-->
 	<!-- 那么系统自动寻找的spring配置文件为[servlet-name]-servlet.xml。当需要载入多个spring相关的配置文件时，-->
 	<!-- 首先加载ContextLoaderListener类，再指定context-param中指定多个spring配置文件，使用逗号分别隔开各个文件。 -->
@@ -47,7 +53,6 @@
 	<!-- <servlet-mapping>指定的该servlet接管的url的行为，此处为了简便起见使用*.*,则表示在URL只要是在本机使用的任何request都是由该dispatchServlet来处理。 -->
 	<!-- para-value: classpath*:applicationContext.xml -->
 	<!-- <param-value>/WEB-INF/config/applicationContext-hibernate.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm</param-value> -->
-    <!-- -->
     <listener>  
         <listener-class>    
             org.springframework.web.context.ContextLoaderListener    
@@ -69,6 +74,9 @@
 	<servlet-mapping>
 		<servlet-name>dispatch</servlet-name>  
 		<url-pattern>*.*</url-pattern>  
-	</servlet-mapping>  
+	</servlet-mapping>
+	<!-- /////////////////////////////////////////////////////////////-->
+    <!-- ///2.2 if use springmv, the configuration as below. END   ///-->
+    <!-- /////////////////////////////////////////////////////////////-->
     
 </web-app>

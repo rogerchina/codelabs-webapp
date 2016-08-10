@@ -62,6 +62,6 @@
         <property name="globalRollbackOnParticipationFailure" value="false" />          
     </bean>  
       
-    <!-- Activates @Transactional for DefaultImageDatabase -->  
+    <!-- Activates @Transactional -->  
     <!-- <tx:annotation-driven transaction-manager="transactionManager"/>-->  
 </beans>  

@@ -2,8 +2,8 @@
 	xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
 	<diskStore path="java.io.tmpdir" />
 
-	<!-- Mandatory Default Cache configuration. These settings will be applied 
-		to caches created programmtically using CacheManager.add(String cacheName) -->
+	<!-- Mandatory Default Cache configuration. These settings will be applied -->
+	<!-- to caches created programmtically using CacheManager.add(String cacheName) -->
 	<!-- 
 		name:缓存名称。 
 		maxElementsInMemory：缓存最大个数。 
