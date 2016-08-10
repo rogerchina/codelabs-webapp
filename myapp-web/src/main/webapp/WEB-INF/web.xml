@@ -21,7 +21,10 @@
      -->
     
     <!-- 2. use SSH framework  -->
-    <!-- Struts 1 and Struts 2 and Springmvc are can controll the request and response. -->
+    <!-- SSH - Strut1/Struts2 + Spring + Hibernate -->
+    <!-- SSH - SpringMVC + Spring + Hibernate -->
+    <!-- Struts 1 and Struts 2 and Springmvc are can act as controller layer. -->
+    
     <!-- ///////////////////////////////////////////////////////////-->
     <!-- ///2.1 if use struts, the configuration as below. START ///-->
     <!-- ///////////////////////////////////////////////////////////-->
@@ -54,9 +57,7 @@
 	<!-- para-value: classpath*:applicationContext.xml -->
 	<!-- <param-value>/WEB-INF/config/applicationContext-hibernate.xml,/WEB-INF/controllers.xml,/WEB-INF/service.xm</param-value> -->
     <listener>  
-        <listener-class>    
-            org.springframework.web.context.ContextLoaderListener    
-        </listener-class>   
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>   
     </listener>  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
