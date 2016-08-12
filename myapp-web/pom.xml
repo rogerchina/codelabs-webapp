@@ -79,6 +79,7 @@
 		    <artifactId>spring-jdbc</artifactId>
 		</dependency>
 		
+		<!-- 
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis</artifactId>
@@ -87,7 +88,7 @@
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>
 		</dependency>
-		
+		 -->
 		
 		<dependency>
 		    <groupId>com.alibaba</groupId>
