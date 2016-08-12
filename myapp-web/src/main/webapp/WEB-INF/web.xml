@@ -28,6 +28,11 @@
     <!-- ///////////////////////////////////////////////////////////-->
     <!-- ///2.1 if use struts, the configuration as below. START ///-->
     <!-- ///////////////////////////////////////////////////////////-->
+    
+    <!-- struts1 configuration -->
+    
+    
+    <!-- struts2 configuration -->
     <!-- 
     <filter>  
         <filter-name>struts2</filter-name>  
